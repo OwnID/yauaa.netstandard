@@ -133,7 +133,7 @@ config:
       AgentVersionMajor                    : 'Hacker'
       AgentNameVersion                     : 'Hacker'
       AgentNameVersionMajor                : 'Hacker'
-      HackerAttackVector                   : 'Unknown'
+      HackerAttackVector                   : 'Buffer overflow'
       HackerToolkit                        : 'Unknown'
       __SyntaxError__                      : 'true'
 

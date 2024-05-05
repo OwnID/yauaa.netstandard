@@ -1584,8 +1584,8 @@ config:
       user_agent_string: 'Curious George - www.analyticsseo.com/crawler'
     expected:
       DeviceClass                          : 'Robot'
-      DeviceName                           : 'Analyticsseo Curious George'
-      DeviceBrand                          : 'Analyticsseo'
+      DeviceName                           : 'Curious George'
+      DeviceBrand                          : 'Unknown'
       OperatingSystemClass                 : 'Cloud'
       OperatingSystemName                  : 'Cloud'
       OperatingSystemVersion               : '??'

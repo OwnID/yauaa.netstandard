@@ -1054,7 +1054,7 @@ config:
       AgentNameVersion                     : 'Hacker'
       AgentNameVersionMajor                : 'Hacker'
       AgentUuid                            : 'BA7D96A3-49DB-48AF-9166-F7043A8866A7'
-      HackerAttackVector                   : 'Unknown'
+      HackerAttackVector                   : 'Buffer overflow'
       HackerToolkit                        : 'Unknown'
       __SyntaxError__                      : 'true'
 

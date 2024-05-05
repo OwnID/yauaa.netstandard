@@ -54,18 +54,21 @@ namespace OrbintSoft.Yauaa.Logger
         /// <inheritdoc/>
         public void Error(FormattableString message)
         {
+            Console.WriteLine(message.Format, message.GetArguments());
             this.log4NetLogger.ErrorFormat(message.Format, message.GetArguments());
         }
 
         /// <inheritdoc/>
         public void Info(FormattableString message)
         {
+            Console.WriteLine(message.Format, message.GetArguments());
             this.log4NetLogger.InfoFormat(message.Format, message.GetArguments());
         }
 
         /// <inheritdoc/>
         public void Warn(FormattableString message)
         {
+            Console.WriteLine(message.Format, message.GetArguments());
             this.log4NetLogger.WarnFormat(message.Format, message.GetArguments());
         }
     }
