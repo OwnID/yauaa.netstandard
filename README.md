@@ -1,5 +1,16 @@
 # Yauaa: Yet Another User Agent Analyzer
 
+## OwnID fork
+
+This was forked from [OrbintSoft/yauaa.netstandard](https://github.com/OrbintSoft/yauaa.netstandard) which is no longer maintained.
+
+To push to codeartifact:
+
+```shell
+rm *.nupkg
+dotnet pack ./src/OrbintSoft.Yauaa.NetStandard/OrbintSoft.Yauaa.NetStandard.csproj --output .
+```
+
 [![Build Status](https://dev.azure.com/orbintsoft/yauaa.netstandard/_apis/build/status/Windows?branchName=master)](https://dev.azure.com/orbintsoft/yauaa.netstandard/_build/latest?definitionId=4&branchName=master)
 [![NuGet](https://img.shields.io/nuget/v/Orbintsoft.Yauaa.NetStandard.svg)](https://www.nuget.org/packages/Orbintsoft.Yauaa.NetStandard/)
 [![License](https://img.shields.io/:license-apache-purple.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
