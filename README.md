@@ -4,11 +4,12 @@
 
 This was forked from [OrbintSoft/yauaa.netstandard](https://github.com/OrbintSoft/yauaa.netstandard) which is no longer maintained.
 
-To push to codeartifact:
+To push to nuget:
 
 ```shell
 rm *.nupkg
 dotnet pack ./src/OrbintSoft.Yauaa.NetStandard/OrbintSoft.Yauaa.NetStandard.csproj --output .
+dotnet nuget push *.nupkg --source nuget/nuget.ownid
 ```
 
 [![Build Status](https://dev.azure.com/orbintsoft/yauaa.netstandard/_apis/build/status/Windows?branchName=master)](https://dev.azure.com/orbintsoft/yauaa.netstandard/_build/latest?definitionId=4&branchName=master)

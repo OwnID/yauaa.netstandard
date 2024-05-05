@@ -22,3 +22,7 @@
 /src/OrbintSoft.Yauaa.NetStandard/*.user
 /src/OrbintSoft.Yauaa.WebSample.AspNetCore/node_modules
 /src/OrbintSoft.Yauaa.WebSample.AspNetCore/package-lock.json
+
+*.nupkg
+.idea
+*.DotSettings.user
