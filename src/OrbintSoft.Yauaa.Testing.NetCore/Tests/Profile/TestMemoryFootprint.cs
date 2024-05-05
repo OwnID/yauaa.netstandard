@@ -70,7 +70,7 @@ namespace OrbintSoft.Yauaa.Testing.Tests.Profile
             // Calculate the used memory
             Process currentProcess = Process.GetCurrentProcess();
             long memory = currentProcess.WorkingSet64;
-            LOG.Info(string.Format(
+            Console.WriteLine(string.Format(
                 "After {0} iterations and GC --> Used memory is {1} bytes ({2} MiB), Average time per parse {3} ns ( ~ {4} ms)",
                 iterationsDone, memory, BytesToMegabytes(memory), averageNanos, averageNanos));
         }
@@ -92,7 +92,7 @@ namespace OrbintSoft.Yauaa.Testing.Tests.Profile
                 .KeepTests()
                 .Build();
 
-            LOG.Info("Init complete");
+            Console.WriteLine("Init complete");
             int iterationsDone = 0;
             int iterationsPerLoop = 1000;
             for (int i = 0; i < 100; i++)
@@ -173,7 +173,7 @@ namespace OrbintSoft.Yauaa.Testing.Tests.Profile
             Process currentProcess = Process.GetCurrentProcess();
             // Calculate the used memory
             long memory = currentProcess.PrivateMemorySize64;
-            LOG.Info(string.Format(
+            Console.WriteLine(string.Format(
                 "----- %{0}: Used memory is {1} bytes ({2} MiB / {3} MiB)",
                 label, memory, BytesToMegabytes(memory), BytesToMegabytes(currentProcess.PeakWorkingSet64)));
         }

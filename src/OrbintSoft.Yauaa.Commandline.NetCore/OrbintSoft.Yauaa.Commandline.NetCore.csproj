@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <RootNamespace>OrbintSoft.Yauaa.Commandline</RootNamespace>
     <Version>5.14-alpha.3</Version>
 	<Authors>Stefano Balzarotti, Niels Basjes</Authors>												   
@@ -21,10 +21,10 @@
     <PackageIconUrl>https://raw.githubusercontent.com/OrbintSoft/yauaa.netstandard/master/assets/icon.png</PackageIconUrl>
     <PackageProjectUrl>https://orbintsoft.net/Yauaa/Index</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <LangVersion>7.3</LangVersion>																				  
+    <LangVersion>default</LangVersion>																				  
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="CommandLineParser" Version="2.8.0" />
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OrbintSoft.Yauaa.NetStandard\OrbintSoft.Yauaa.NetStandard.csproj" />

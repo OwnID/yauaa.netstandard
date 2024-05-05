@@ -24,6 +24,9 @@
 // <author>Stefano Balzarotti, Niels Basjes</author>
 // <date>2018, 11, 24, 17:39</date>
 //-----------------------------------------------------------------------
+
+using System;
+
 namespace OrbintSoft.Yauaa.Testing.Tests
 {
     using FluentAssertions;
@@ -50,11 +53,12 @@ namespace OrbintSoft.Yauaa.Testing.Tests
         /// </summary>
         /// <param name="delay">The delay<see cref="bool"/></param>
         /// <returns>The <see cref="UserAgentAnalyzerTester"/></returns>
+        [Obsolete("Obsolete")]
         public UserAgentAnalyzerTester SerializeAndDeserializeUAA(bool delay)
         {
-            LOG.Info("==============================================================");
-            LOG.Info("Create");
-            LOG.Info("--------------------------------------------------------------");
+            Console.WriteLine("==============================================================");
+            Console.WriteLine("Create");
+            Console.WriteLine("--------------------------------------------------------------");
             var uaab = UserAgentAnalyzerTester
                 .NewBuilder()
                 .KeepTests()
@@ -75,8 +79,8 @@ namespace OrbintSoft.Yauaa.Testing.Tests
             }
 
             var uaa = uaab.Build() as UserAgentAnalyzerTester;
-            LOG.Info("--------------------------------------------------------------");
-            LOG.Info("Serialize");
+            Console.WriteLine("--------------------------------------------------------------");
+            Console.WriteLine("Serialize");
             byte[] bytes;
 
             using (var memoryStream = new MemoryStream())
@@ -86,9 +90,9 @@ namespace OrbintSoft.Yauaa.Testing.Tests
                 bytes = memoryStream.ToArray();
             }
 
-            LOG.Info(string.Format("The UserAgentAnalyzer was serialized into {0} bytes", bytes.LongLength));
-            LOG.Info("--------------------------------------------------------------");
-            LOG.Info("Deserialize");
+            Console.WriteLine(string.Format("The UserAgentAnalyzer was serialized into {0} bytes", bytes.LongLength));
+            Console.WriteLine("--------------------------------------------------------------");
+            Console.WriteLine("Deserialize");
 
             using (var memoryStream = new MemoryStream(bytes))
             {
@@ -98,8 +102,8 @@ namespace OrbintSoft.Yauaa.Testing.Tests
                 uaa = obj as UserAgentAnalyzerTester;
             }
 
-            LOG.Info("Done");
-            LOG.Info("==============================================================");
+            Console.WriteLine("Done");
+            Console.WriteLine("==============================================================");
 
             return uaa;
         }
@@ -114,9 +118,9 @@ namespace OrbintSoft.Yauaa.Testing.Tests
         public void ValidateAllPredefinedBrowsers(bool delay)
         {
             var uaa = this.SerializeAndDeserializeUAA(delay);
-            LOG.Info("==============================================================");
-            LOG.Info("Validating when getting all fields");
-            LOG.Info("--------------------------------------------------------------");
+            Console.WriteLine("==============================================================");
+            Console.WriteLine("Validating when getting all fields");
+            Console.WriteLine("--------------------------------------------------------------");
             uaa.RunTests(false, false, null, false, false).Should().BeTrue();
         }
     }

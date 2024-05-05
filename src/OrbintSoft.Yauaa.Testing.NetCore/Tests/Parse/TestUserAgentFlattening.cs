@@ -1387,11 +1387,11 @@ namespace OrbintSoft.Yauaa.Testing.Tests.Parse
 
             if (developmentMode)
             {
-                LOG.Info(string.Format("Developing {0}", useragent));
+                Console.WriteLine(string.Format("Developing {0}", useragent));
             }
             else
             {
-                LOG.Info(string.Format("Validating {0}", useragent));
+                Console.WriteLine(string.Format("Validating {0}", useragent));
             }
 
             StringBuilder sb = new StringBuilder(2048);
@@ -1443,7 +1443,7 @@ namespace OrbintSoft.Yauaa.Testing.Tests.Parse
 
             if (developmentMode)
             {
-                LOG.Info(sb.ToString());
+                Console.WriteLine(sb.ToString());
                 return;
             }
             if (!ok)

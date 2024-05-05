@@ -132,7 +132,7 @@ namespace OrbintSoft.Yauaa.Testing.Tests.Utils
                 prefixLookup.FindLongestMatchingPrefix("999");
             }
             stopWatch.Stop();
-            Log.Info(string.Format("Speed stats: {0} runs took {1}ms --> {2}us",
+            Console.WriteLine(string.Format("Speed stats: {0} runs took {1}ms --> {2}us",
                 iterations, stopWatch.ElapsedMilliseconds, stopWatch.Elapsed.TotalMilliseconds * 1000));
             prefixLookup.FindLongestMatchingPrefix("1").Should().Be("Result 1");
         }

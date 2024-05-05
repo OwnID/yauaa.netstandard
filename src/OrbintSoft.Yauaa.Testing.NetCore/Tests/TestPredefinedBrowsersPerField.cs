@@ -25,6 +25,9 @@
 // <date>2018, 11, 24, 17:39</date>
 // <summary></summary>
 //-----------------------------------------------------------------------
+
+using System;
+
 namespace OrbintSoft.Yauaa.Testing.Tests
 {
     using FluentAssertions;
@@ -72,9 +75,9 @@ namespace OrbintSoft.Yauaa.Testing.Tests
         public void ValidateAllPredefinedBrowsersForField(string fieldName)
         {
             ICollection<string> singleFieldList = new string[] { fieldName };
-            LOG.Info("==============================================================");
-            LOG.Info(string.Format("Validating when ONLY asking for {0}", fieldName));
-            LOG.Info("--------------------------------------------------------------");
+            Console.WriteLine("==============================================================");
+            Console.WriteLine(string.Format("Validating when ONLY asking for {0}", fieldName));
+            Console.WriteLine("--------------------------------------------------------------");
             UserAgentAnalyzerTester userAgentAnalyzer =
                 UserAgentAnalyzerTester
                     .NewBuilder()

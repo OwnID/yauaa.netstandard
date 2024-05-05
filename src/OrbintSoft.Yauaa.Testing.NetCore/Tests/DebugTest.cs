@@ -25,6 +25,8 @@
 // <date>2018, 11, 24, 17:39</date>
 // <summary></summary>
 //-----------------------------------------------------------------------
+
+using System;
 using OrbintSoft.Yauaa.Debug;
 using OrbintSoft.Yauaa.Testing.Fixtures;
 using Xunit;
@@ -43,6 +45,7 @@ namespace OrbintSoft.Yauaa.Testing.Tests
 
         readonly HashSet<string> singleFieldList = new HashSet<string>() { "DeviceBrand" };
 
+        [Obsolete("Obsolete")]
         public UserAgentAnalyzerTester SerializeAndDeserializeUAA()
         {
             var uaa = UserAgentAnalyzerTester.NewBuilder()

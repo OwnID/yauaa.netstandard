@@ -203,7 +203,7 @@ namespace OrbintSoft.Yauaa.Testing.Tests
             agent0.Should().BeEquivalentTo(baseAgent);
             baseAgent.GetHashCode().Should().Be(agent0.GetHashCode());
 
-            Log.Info(baseAgent.ToString("Field"));
+            Console.WriteLine(baseAgent.ToString("Field"));
 
 
             baseAgent.Equals(agent2).Should().BeFalse();

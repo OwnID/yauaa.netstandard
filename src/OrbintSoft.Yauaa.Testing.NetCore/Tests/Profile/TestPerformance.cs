@@ -68,7 +68,7 @@ namespace OrbintSoft.Yauaa.Testing.Tests.Profile
         public void CheckAllPossibleFieldsFastSpeed()
         {
             Skip.If(!Config.ENABLE_PROFILING);
-            LOG.Info("Create analyzer");
+            Console.WriteLine("Create analyzer");
             Stopwatch stopwatch = Stopwatch.StartNew();
             UserAgentAnalyzer uaa = UserAgentAnalyzer
                 .NewBuilder()
@@ -77,33 +77,33 @@ namespace OrbintSoft.Yauaa.Testing.Tests.Profile
                 .Build();
             stopwatch.Stop();
             long constructMsecs = stopwatch.ElapsedMilliseconds; ;
-            LOG.Info(string.Format("-- Construction time: {0}ms", constructMsecs));
+            Console.WriteLine(string.Format("-- Construction time: {0}ms", constructMsecs));
 
-            LOG.Info("List fieldnames");
+            Console.WriteLine("List fieldnames");
             stopwatch.Restart();
             foreach (var n in uaa.GetAllPossibleFieldNamesSorted())
             {
-                LOG.Info(n);
+                Console.WriteLine(n);
             }
             stopwatch.Stop();
             long listFieldNamesMsecs = stopwatch.ElapsedMilliseconds;
-            LOG.Info(string.Format("-- List fieldnames: {0}ms", listFieldNamesMsecs));
+            Console.WriteLine(string.Format("-- List fieldnames: {0}ms", listFieldNamesMsecs));
             listFieldNamesMsecs.Should().BeLessThan(500, "Just listing the field names should only take a few ms");
 
-            LOG.Info("Initializing the datastructures");
+            Console.WriteLine("Initializing the datastructures");
             stopwatch.Restart();
             uaa.InitializeMatchers();
             stopwatch.Stop();
             long initializeMsecs = stopwatch.ElapsedMilliseconds;
-            LOG.Info(string.Format("-- Initialization: {0}ms", initializeMsecs));
+            Console.WriteLine(string.Format("-- Initialization: {0}ms", initializeMsecs));
             initializeMsecs.Should().BeGreaterThan(300, "The initialization should take several seconds");
 
-            LOG.Info("Preheat");
+            Console.WriteLine("Preheat");
             stopwatch.Restart();
             uaa.PreHeat();
             stopwatch.Stop();
             long preheatMsecs = stopwatch.ElapsedMilliseconds;
-            LOG.Info(string.Format("-- Preheat : {0}ms", preheatMsecs));
+            Console.WriteLine(string.Format("-- Preheat : {0}ms", preheatMsecs));
         }
     }
 }
